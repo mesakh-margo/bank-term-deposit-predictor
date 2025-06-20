@@ -197,7 +197,8 @@ if submitted:
         col1, col2 = st.columns([1, 2])
         
         with col1:
-            if prediction == 'Yes':
+            # Use probability directly - more reliable
+            if probability > 0.5:
                 st.success(f"## Client WILL subscribe to term deposit")
             else:
                 st.warning(f"## Client WILL NOT subscribe to term deposit")
